@@ -1,0 +1,97 @@
+// main: ../index.less
+
+.tictactoe {
+  & .game-container {
+    display: flex;
+    flex-wrap: wrap;
+    height: 0;
+    padding-bottom: 100%;
+    width: 100%;
+
+    & .block {
+      border: 1px solid darkgray;
+      height: 0;
+      padding-bottom: 33%;
+      width: 33%;
+
+      position: relative;
+
+      &.clean:hover {
+        background-color: @teal;
+      }
+
+      & .marker {
+        font-size: 15vw;
+      }
+
+      & .marker {
+        height: 0;
+        padding-bottom: 60%;
+        width: 60%;
+
+        position: absolute;
+        top: 20%;
+        left: 20%;
+
+        &.o {
+          border-radius: 50%;
+          box-shadow: inset 0 0 0 2vw #000000;
+        }
+
+        &.x {
+          // background-color: red;
+          // width: 2vw;
+          // margin-left: 25%;
+
+          // &:after {
+          //   background-color: red;
+          //   content: "";
+          //   height: 2vw;
+          // }
+          // background: red;
+          // height: 100px;
+          // position: relative;
+          // width: 20px;
+          // &:after {
+          //   background: red;
+          //   content: "";
+          //   height: 20px;
+          //   left: -40px;
+          //   position: absolute;
+          //   top: 40px;
+          //   width: 100px;
+          // }
+        }
+
+
+      }
+    }
+  }
+}
+
+#cross {
+   width: 100px;
+   height: 100px;
+   position: relative;
+}
+
+#cross:before, #cross:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: #d00;
+}
+
+#cross:before {
+  left: 50%;
+  width: 30%;
+  margin-left: -15%;
+  height: 100%;
+}
+
+#cross:after {
+  top: 50%;
+  height: 30%;
+  margin-top: -15%;
+  width: 100%;
+}
