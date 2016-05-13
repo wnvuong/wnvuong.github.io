@@ -1,11 +1,21 @@
 // main: ../index.less
 
+.navbar-collapse {
+  overflow: hidden;
+  transition: max-height 0.6s;
+	// transition: border-top 0.6s 0.6s;
+
+  &.collapse {
+    max-height: 0;
+  }
+}
+
 .navbar-main {
   background-color: @background-color-main-navbar;
 }
 
 #navbar-main-brand {
-  
+
 }
 
 .body-content {

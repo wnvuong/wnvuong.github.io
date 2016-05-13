@@ -6724,6 +6724,13 @@ button.close {
     display: none !important;
   }
 }
+.navbar-collapse {
+  overflow: hidden;
+  transition: max-height 0.6s;
+}
+.navbar-collapse.collapse {
+  max-height: 0;
+}
 .navbar-main {
   background-color: white;
 }
