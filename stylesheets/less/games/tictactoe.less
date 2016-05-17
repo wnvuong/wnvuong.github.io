@@ -4,94 +4,71 @@
   & .game-container {
     display: flex;
     flex-wrap: wrap;
-    height: 0;
-    padding-bottom: 100%;
+
+    position: relative;
     width: 100%;
+
+    &:after {
+      content: "";
+      display: block;;
+      padding-bottom: 100%;
+    }
 
     & .block {
       border: 1px solid darkgray;
-      height: 0;
-      padding-bottom: 33%;
-      width: 33%;
 
       position: relative;
+      width: 33%;
+      height: 100%;
 
-      &.clean:hover {
-        background-color: @teal;
+      &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+        border: solid 1px gray;
       }
 
       & .marker {
-        font-size: 15vw;
-      }
-
-      & .marker {
-        height: 0;
-        padding-bottom: 60%;
-        width: 60%;
-
         position: absolute;
-        top: 20%;
-        left: 20%;
+        width: 100%;
+        height: 100%;
+        font-size: 15vw;
 
         &.o {
-          border-radius: 50%;
-          box-shadow: inset 0 0 0 2vw #000000;
+          & .circle {
+            height: 80%;
+            width: 80%;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 2vw #000000;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+          }
         }
 
         &.x {
-          // background-color: red;
-          // width: 2vw;
-          // margin-left: 25%;
+          & .left {
+            height: 100%;
+            width: 2vw;
+            left: 46%;
+            background: black;
+            transform: rotateZ(45deg);
+            position: absolute;
+          }
 
-          // &:after {
-          //   background-color: red;
-          //   content: "";
-          //   height: 2vw;
-          // }
-          // background: red;
-          // height: 100px;
-          // position: relative;
-          // width: 20px;
-          // &:after {
-          //   background: red;
-          //   content: "";
-          //   height: 20px;
-          //   left: -40px;
-          //   position: absolute;
-          //   top: 40px;
-          //   width: 100px;
-          // }
+          & .right {
+            height: 100%;
+            width: 2vw;
+            left: 46%;
+            background: black;
+            transform: rotateZ(-45deg);
+            position: absolute;
+          }
         }
-
-
       }
     }
   }
-}
-
-#cross {
-   width: 100px;
-   height: 100px;
-   position: relative;
-}
-
-#cross:before, #cross:after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background: #d00;
-}
-
-#cross:before {
-  left: 50%;
-  width: 30%;
-  margin-left: -15%;
-  height: 100%;
-}
-
-#cross:after {
-  top: 50%;
-  height: 30%;
-  margin-top: -15%;
-  width: 100%;
 }
