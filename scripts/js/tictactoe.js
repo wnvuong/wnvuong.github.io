@@ -7,10 +7,10 @@ $(blockIdentifier).click(function(event) {
   if (event.currentTarget.innerHTML.trim() === "") {
     if (xGoes) {
       event.currentTarget.appendChild(getX());
-      xGoes = !xGoes;
     } else {
       event.currentTarget.appendChild(getO());
     }
+    xGoes = !xGoes;
   }
 
 });
