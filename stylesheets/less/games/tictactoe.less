@@ -1,24 +1,44 @@
 // main: ../index.less
 
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-between {
+  -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+}
+
+.flex-end {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -ms-grid-row-align: flex-end;
+  align-items: flex-end;
+}
+
+.flex-baseline {
+  -webkit-box-align: baseline;
+  -ms-flex-align: baseline;
+  -ms-grid-row-align: baseline;
+  align-items: baseline;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .tictactoe {
   & .game-container {
-    display: flex;
-    flex-wrap: wrap;
-
-    position: relative;
-    width: 100%;
-
-    &:after {
-      content: "";
-      display: block;;
-      padding-bottom: 100%;
-    }
 
     & .block {
       border: 1px solid darkgray;
 
       position: relative;
-      width: 33%;
+      width: 33.33333%;
       height: 100%;
 
       &:after {
@@ -27,6 +47,7 @@
         padding-bottom: 100%;
         border: solid 1px gray;
       }
+
 
       & .marker {
         position: absolute;
@@ -55,7 +76,8 @@
             width: 2vw;
             left: 46%;
             background: black;
-            transform: rotateZ(45deg);
+            -webkit-transform: rotateZ(45deg);
+                    transform: rotateZ(45deg);
             position: absolute;
           }
 
@@ -64,10 +86,26 @@
             width: 2vw;
             left: 46%;
             background: black;
-            transform: rotateZ(-45deg);
+            -webkit-transform: rotateZ(-45deg);
+                    transform: rotateZ(-45deg);
             position: absolute;
           }
         }
+      }
+
+
+      &.winner {
+
+        & .marker.o .circle {
+          box-shadow: inset 0 0 0 2vw orange;
+        }
+
+        & .marker.x .left,
+        & .marker.x .right {
+          background: orange;
+        }
+
+
       }
     }
   }
