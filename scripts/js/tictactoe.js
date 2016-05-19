@@ -1,10 +1,11 @@
 var xGoes = null;
 var board = null;
+var gameOver = false;
 
 resetBoardModel();
 
 function blockSelected(elem) {
-  if (elem.innerHTML.trim() === "") {
+  if (elem.innerHTML.trim() === "" && !gameOver) {
     // set the marker
     if (xGoes) {
       elem.appendChild(getX());
@@ -37,6 +38,7 @@ function resetBoardView() {
 function resetBoardModel() {
   board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]];
   xGoes = true;
+  gameOver = false;
 }
 
 function getX() {
@@ -206,7 +208,6 @@ function isWinner(currMarker, row, col) {
     blockA.className += " winner";
     blockB.className += " winner";
     blockC.className += " winner";
+    gameOver = true;
   }
-
-  // function checkColumns
 }
